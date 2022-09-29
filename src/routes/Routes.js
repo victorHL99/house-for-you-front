@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Signup from '../pages/Signup';
+import Login from '../pages/Login';
 
 export default function Router() {
   return (
@@ -11,7 +12,7 @@ export default function Router() {
       {/* TODO create Login */}
 
       <Route path="/signup" element={<Signup />} />
-      {/* <Route path="/login" element={<Login />} /> */}
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
