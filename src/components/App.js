@@ -6,12 +6,14 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/globalStyle';
 import theme from '../styles/theme';
 
+import Routes from '../routes/Routes';
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
-        <h1>Hello World</h1>
+        <Routes />
       </BrowserRouter>
     </ThemeProvider>
   );
