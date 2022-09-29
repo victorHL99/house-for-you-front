@@ -10,10 +10,10 @@ export default function Signup() {
   const URL = 'http://localhost:9000/signup';
   const [userSignup, setUserSignup] = useState({
     name: '',
-    lastName: '',
+    last_name: '',
     email: '',
     password: '',
-    profileImage: '',
+    profile_image: '',
   });
 
   async function createUser(event) {
@@ -39,12 +39,12 @@ export default function Signup() {
         />
         <input
           type="text"
-          name="lastName"
-          id="lastName"
+          name="last_name"
+          id="last_name"
           required
           placeholder="Last Name"
           onChange={e =>
-            setUserSignup({ ...userSignup, lastName: e.target.value })
+            setUserSignup({ ...userSignup, last_name: e.target.value })
           }
         />
         <input
@@ -69,12 +69,12 @@ export default function Signup() {
         />
         <input
           type="url"
-          name="profileImage"
+          name="profile_image"
           id="profileImage"
           required
           placeholder="profile image"
           onChange={e =>
-            setUserSignup({ ...userSignup, profileImage: e.target.value })
+            setUserSignup({ ...userSignup, profile_image: e.target.value })
           }
         />
         <button type="submit">Sign Up</button>
