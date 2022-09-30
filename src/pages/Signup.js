@@ -1,9 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/jsx-filename-extension */
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -29,55 +31,68 @@ export default function Signup() {
   return (
     <div>
       <form onSubmit={createUser}>
-        <input
+        {/* TODO NAME */}
+        <TextField
+          id="outlined-basic"
+          label="First Name"
+          variant="outlined"
           type="text"
           name="name"
-          id="name"
           required
-          placeholder="First Name"
           onChange={e => setUserSignup({ ...userSignup, name: e.target.value })}
         />
-        <input
+        {/* TODO LAST NAME */}
+        <TextField
+          id="outlined-basic"
+          label="Last Name"
+          variant="outlined"
           type="text"
           name="last_name"
-          id="last_name"
           required
-          placeholder="Last Name"
           onChange={e =>
             setUserSignup({ ...userSignup, last_name: e.target.value })
           }
         />
-        <input
+        {/* TODO EMAIL */}
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
           type="text"
           name="email"
-          id="email"
           required
-          placeholder="Email"
           onChange={e =>
             setUserSignup({ ...userSignup, email: e.target.value })
           }
         />
-        <input
+        {/* TODO PASSWORD */}
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
           type="password"
           name="password"
-          id="password"
           required
-          placeholder="Password"
           onChange={e =>
             setUserSignup({ ...userSignup, password: e.target.value })
           }
         />
-        <input
+        {/* TODO PROFILE_iMAGE */}
+        <TextField
+          id="outlined-basic"
+          label="Profile Image"
+          variant="outlined"
           type="url"
           name="profile_image"
-          id="profileImage"
           required
-          placeholder="profile image"
           onChange={e =>
             setUserSignup({ ...userSignup, profile_image: e.target.value })
           }
         />
-        <button type="submit">Sign Up</button>
+
+        <Button type="submit" variant="contained">
+          Sign Up
+        </Button>
       </form>
 
       <Link to="/login">
