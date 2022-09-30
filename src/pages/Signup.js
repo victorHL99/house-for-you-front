@@ -56,7 +56,7 @@ export default function Signup() {
         {/* TODO EMAIL */}
         <TextField
           id="outlined-basic"
-          label="Email"
+          label="Email "
           variant="outlined"
           type="text"
           name="email"

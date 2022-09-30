@@ -5,6 +5,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 export default function Login() {
   const navigate = useNavigate();
   const URL = 'http://localhost:9000/login';
@@ -26,25 +29,31 @@ export default function Login() {
   return (
     <div>
       <form onSubmit={sendLogin}>
-        <input
+        {/* TODO EMAIL */}
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
           type="text"
           name="email"
-          id="email"
           required
-          placeholder="Email"
           onChange={e => setUserLogin({ ...userLogin, email: e.target.value })}
         />
-        <input
+        {/* TODO PASSWORD */}
+        <TextField
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
           type="password"
           name="password"
-          id="password"
           required
-          placeholder="Password"
           onChange={e =>
             setUserLogin({ ...userLogin, password: e.target.value })
           }
         />
-        <button type="submit">Sign Up</button>
+        <Button type="submit" variant="contained">
+          Sign Up
+        </Button>
       </form>
 
       <Link to="/signup">
