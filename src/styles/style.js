@@ -20,5 +20,6 @@ export const SignForm = styled.form`
 export const PageContainer = styled.main`
   width: 100%;
   height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
+  margin-top: ${({ theme }) => theme.spacing.headerHeight};
   background-color: red;
 `;
