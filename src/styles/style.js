@@ -16,3 +16,9 @@ export const SignForm = styled.form`
   justify-content: center;
   gap: 10px;
 `;
+
+export const PageContainer = styled.main`
+  width: 100%;
+  height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
+  background-color: red;
+`;
