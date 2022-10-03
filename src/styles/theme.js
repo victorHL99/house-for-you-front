@@ -2,9 +2,12 @@ const theme = {
   fonts: {
     mainFont: "'Lato', sans-serif",
   },
-  colors: {},
+  colors: {
+    primary: 'green',
+  },
   spacing: {
     maxBodyWidth: '1024px',
+    headerHeight: '80px',
   },
   breakpoints: {
     mobile: '320px',
