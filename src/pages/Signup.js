@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/jsx-filename-extension */
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import axios from 'axios';
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import * as S from '../styles/style';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -29,8 +31,8 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <form onSubmit={createUser}>
+    <S.AuthContainer>
+      <S.SignForm onSubmit={createUser}>
         {/* TODO NAME */}
         <TextField
           id="outlined-basic"
@@ -93,11 +95,11 @@ export default function Signup() {
         <Button type="submit" variant="contained">
           Sign Up
         </Button>
-      </form>
+      </S.SignForm>
 
-      <Link to="/login">
+      <Link to="/">
         <span>Switch back to log in</span>
       </Link>
-    </div>
+    </S.AuthContainer>
   );
 }

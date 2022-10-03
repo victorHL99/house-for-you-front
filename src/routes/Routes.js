@@ -12,7 +12,7 @@ export default function Router() {
       {/* TODO create Login */}
 
       <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
     </Routes>
   );
 }
