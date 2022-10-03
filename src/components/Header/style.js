@@ -19,41 +19,4 @@ export const Header = styled.header`
 
   padding: 0;
   margin: 0;
-
-  nav {
-    height: 100%;
-    position: relative;
-    padding-right: 20px;
-    ul {
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      list-style: none;
-      li {
-        height: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: filter 300ms;
-        &:hover {
-          /* filter: brightness(1.2); */
-        }
-        svg {
-          font-size: 22px;
-          cursor: pointer;
-        }
-        img {
-          height: 70%;
-          aspect-ratio: 1 / 1;
-          object-fit: cover;
-          margin: 0;
-          border-radius: 50%;
-          cursor: pointer;
-        }
-      }
-    }
-  }
 `;
