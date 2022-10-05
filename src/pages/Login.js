@@ -21,7 +21,8 @@ export default function Login() {
   async function sendLogin(event) {
     event.preventDefault();
     try {
-      await axios.post(URL, userLogin);
+      const login = await axios.post(URL, userLogin);
+      localStorage.setItem('token', login.data.token);
       navigate('/home');
     } catch (error) {
       console.log(error);
