@@ -19,4 +19,30 @@ export const Header = styled.header`
 
   padding: 0;
   margin: 0;
+
+  h1 {
+    font-family: ${({ theme }) => theme.fonts.logoFont};
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    padding-left: 20px;
+  }
+
+  nav {
+    height: 100%;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 70%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
 `;
