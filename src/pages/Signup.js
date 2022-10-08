@@ -24,7 +24,7 @@ export default function Signup() {
     event.preventDefault();
     try {
       await axios.post(URL, userSignup);
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       console.log(error);
     }

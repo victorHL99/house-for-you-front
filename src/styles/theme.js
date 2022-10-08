@@ -1,6 +1,7 @@
 const theme = {
   fonts: {
     mainFont: "'Lato', sans-serif",
+    logoFont: "'Pacifico', cursive",
   },
   colors: {
     primary: 'green',

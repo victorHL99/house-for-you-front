@@ -17,11 +17,14 @@ export default function Home() {
     };
 
     const response = await axios.get(
+      // TODO transform this URL in a .env variable
       `http://localhost:9000/home/announcements`,
       config,
     );
     console.log(response);
+    return response;
   }
+
   return (
     <S.PageContainer>
       <Header />
