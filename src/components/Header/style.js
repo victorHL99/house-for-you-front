@@ -31,10 +31,10 @@ export const Header = styled.header`
     height: 100%;
     position: relative;
     padding-left: 20px;
-    padding-right: 20px;
     gap: 10px;
     display: flex;
     align-items: center;
+    background-color: white;
 
     img {
       height: 70%;
@@ -45,4 +45,24 @@ export const Header = styled.header`
       cursor: pointer;
     }
   }
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: ${({ theme }) => theme.spacing.headerHeight};
+  height: 5%;
+  right: 0;
+  width: 150px;
+  border-radius: 0 0 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+
+  background-color: black;
 `;
