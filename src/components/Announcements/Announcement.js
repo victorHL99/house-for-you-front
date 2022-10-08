@@ -29,7 +29,15 @@ export default function Announcement(props) {
           <BiBath size={25} />
           <p>{announcement.bathrooms} bathrooms</p>
         </div>
-        <button type="submit" onClick={console.log(announcement.phone_number)}>
+        <button
+          type="submit"
+          onClick={() => {
+            window.open(
+              `https://wa.me/55${announcement.phone_number}?text=Hello,%20I'm%20interested%20in%20the%20property%20`,
+              '_blank',
+            );
+          }}
+        >
           Contact
         </button>
       </S.ContainerIcons>
