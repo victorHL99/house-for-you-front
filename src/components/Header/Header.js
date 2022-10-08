@@ -15,6 +15,7 @@ import * as S from './style';
 export default function Header() {
   const navigate = useNavigate();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function Header() {
         localStorage.setItem('email', response.data.email);
         localStorage.setItem('lastName', response.data.last_name);
         localStorage.setItem('profileImage', response.data.profile_image);
+        setShowHeader(true);
       })
       .catch(err => {
         console.log(err);
@@ -49,30 +51,29 @@ export default function Header() {
   }
 
   function handleLogout() {
-    localStorage.clear();
-    navigate('/', () => {
-      window.location.reload();
-    });
+    navigate('/');
   }
 
   return (
     <>
       <S.Header>
         <h1>House For you</h1>
-        <nav>
-          <h2>Hello, {localStorage.getItem('name')} </h2>
-          {menuIsOpen ? (
-            <IoIosArrowDown onClick={handleMenu} cursor="pointer" />
-          ) : (
-            <IoIosArrowUp onClick={handleMenu} cursor="pointer" />
-          )}
-          <img
-            // add reloader
-            src={localStorage.getItem('profileImage')}
-            alt="profile Image"
-            onClick={handleMenu}
-          />
-        </nav>
+        {showHeader && (
+          <nav>
+            <h2>Welcome, {localStorage.getItem('name')} </h2>
+            {menuIsOpen ? (
+              <IoIosArrowDown onClick={handleMenu} cursor="pointer" />
+            ) : (
+              <IoIosArrowUp onClick={handleMenu} cursor="pointer" />
+            )}
+            <img
+              // add reloader
+              src={localStorage.getItem('profileImage')}
+              alt="profile Image"
+              onClick={handleMenu}
+            />
+          </nav>
+        )}
       </S.Header>
       {menuIsOpen && (
         <S.DropdownMenu>
