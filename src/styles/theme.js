@@ -2,9 +2,18 @@ const theme = {
   fonts: {
     mainFont: "'Lato', sans-serif",
     logoFont: "'Pacifico', cursive",
+    displayFont: "'Oswald', sans-serif",
+    annouceFont:
+      "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
   },
   colors: {
-    primary: 'green',
+    primary: '#262525',
+    secondary: '#e6ddbc',
+    tertiary: '#525252',
+    quaternary: '#822626',
+    quinary: '#690202',
+    white: '#ffffff',
+    black: '#000000',
   },
   spacing: {
     maxBodyWidth: '1024px',
