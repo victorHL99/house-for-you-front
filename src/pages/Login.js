@@ -12,7 +12,7 @@ import * as S from '../styles/style';
 
 export default function Login() {
   const navigate = useNavigate();
-  const URL = `${process.env.REACT_APP_API_KEY}login`;
+  const URL = `${process.env.REACT_APP_API_KEY}/login`;
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
