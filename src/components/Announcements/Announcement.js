@@ -1,16 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import { BiArea, BiBed, BiCar, BiBath } from 'react-icons/bi';
 import * as S from './style';
 
 export default function Announcement(props) {
+  const token = localStorage.getItem('token');
+  const [pictures, setPictures] = useState([]);
+  const [showPictures, setShowPictures] = useState(false);
   const { announcement } = props;
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios
+      .get(
+        `${process.env.REACT_APP_API_KEY}pictures/${announcement.id}`,
+        config,
+      )
+      .then(response => {
+        setPictures(response.data);
+        setShowPictures(true);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(pictures);
+
+  function renderPictures() {
+    return pictures.map(picture => (
+      <S.ImageHouse src={picture.photos} alt="Imagem do anúncio" />
+    ));
+  }
+
   return (
     <S.Announcement>
+      <S.ContainerImage>
+        {showPictures ? renderPictures() : <p>Carregando...</p>}
+      </S.ContainerImage>
       <h1>${announcement.value} /month</h1>
       <p>{announcement.description}</p>
       <p>
-        Adress: {announcement.address}, {announcement.number_house}
+        Address: {announcement.address}, {announcement.number_house}
       </p>
       <S.ContainerIcons>
         <div>
@@ -38,7 +75,7 @@ export default function Announcement(props) {
             );
           }}
         >
-          Contact
+          Tell me
         </button>
       </S.ContainerIcons>
     </S.Announcement>
