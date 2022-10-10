@@ -26,7 +26,7 @@ export default function Header() {
     };
 
     axios
-      .get(`${process.env.REACT_APP_API_KEY}/user/`, config)
+      .get(`${process.env.REACT_APP_API_KEY}user/`, config)
       .then(response => {
         console.log(response.data);
         // TODO transform for userState

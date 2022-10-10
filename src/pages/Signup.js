@@ -11,7 +11,7 @@ import * as S from '../styles/style';
 
 export default function Signup() {
   const navigate = useNavigate();
-  const URL = `${process.env.REACT_APP_API_KEY}/signup`;
+  const URL = `${process.env.REACT_APP_API_KEY}signup`;
   console.log(URL);
   const [userSignup, setUserSignup] = useState({
     name: '',

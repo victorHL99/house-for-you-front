@@ -21,7 +21,7 @@ export default function Home() {
       },
     };
     axios
-      .get(`${process.env.REACT_APP_API_KEY}/home/announcements`, config)
+      .get(`${process.env.REACT_APP_API_KEY}home/announcements`, config)
       .then(response => {
         setAnnouncements(response.data);
         setShowAnnouncements(true);

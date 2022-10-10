@@ -19,7 +19,7 @@ export default function Announcement(props) {
 
     axios
       .get(
-        `${process.env.REACT_APP_API_KEY}/pictures/${announcement.id}`,
+        `${process.env.REACT_APP_API_KEY}pictures/${announcement.id}`,
         config,
       )
       .then(response => {
