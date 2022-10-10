@@ -22,6 +22,7 @@ export default function Login() {
     event.preventDefault();
     try {
       const login = await axios.post(URL, userLogin);
+      console.log();
       localStorage.setItem('token', login.data.token);
       navigate('/home');
     } catch (error) {
