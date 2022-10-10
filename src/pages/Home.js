@@ -21,11 +21,7 @@ export default function Home() {
       },
     };
     axios
-      .get(
-        // TODO transform this URL in a .env variable
-        `http://localhost:9000/home/announcements`,
-        config,
-      )
+      .get(`${process.env.REACT_APP_API_KEY}home/announcements`, config)
       .then(response => {
         setAnnouncements(response.data);
         setShowAnnouncements(true);
@@ -34,7 +30,6 @@ export default function Home() {
         console.log(err);
       });
   }, []);
-  console.log(announcements);
 
   function renderAnnouncements() {
     return announcements.map((announcement, index) => (
@@ -45,8 +40,8 @@ export default function Home() {
   return (
     <S.PageContainer>
       <Header />
-      <h1>Home</h1>
-      <div>{showAnnouncements ? renderAnnouncements() : 'deu ruim'}</div>
+      <S.PageLabel>Announce</S.PageLabel>
+      <div>{showAnnouncements ? renderAnnouncements() : 'Carregando...'}</div>
     </S.PageContainer>
   );
 }

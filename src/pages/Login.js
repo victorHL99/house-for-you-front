@@ -12,7 +12,7 @@ import * as S from '../styles/style';
 
 export default function Login() {
   const navigate = useNavigate();
-  const URL = 'http://localhost:9000/login';
+  const URL = `${process.env.REACT_APP_API_KEY}login`;
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
@@ -31,8 +31,9 @@ export default function Login() {
 
   return (
     <S.AuthContainer>
+      <h1>House For You</h1>
+      <h2>Hi, pleased to see you!</h2>
       <S.SignForm onSubmit={sendLogin}>
-        {/* TODO EMAIL */}
         <TextField
           id="outlined-basic"
           label="Email"
@@ -42,7 +43,6 @@ export default function Login() {
           required
           onChange={e => setUserLogin({ ...userLogin, email: e.target.value })}
         />
-        {/* TODO PASSWORD */}
         <TextField
           id="outlined-basic"
           label="Password"

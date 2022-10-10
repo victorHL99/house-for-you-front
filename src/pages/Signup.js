@@ -11,7 +11,7 @@ import * as S from '../styles/style';
 
 export default function Signup() {
   const navigate = useNavigate();
-  const URL = 'http://localhost:9000/signup';
+  const URL = `${process.env.REACT_APP_API_KEY}/signup`;
   const [userSignup, setUserSignup] = useState({
     name: '',
     last_name: '',
@@ -32,8 +32,9 @@ export default function Signup() {
 
   return (
     <S.AuthContainer>
+      <h1>House For You</h1>
+      <h2>Create your account Here!</h2>
       <S.SignForm onSubmit={createUser}>
-        {/* TODO NAME */}
         <TextField
           id="outlined-basic"
           label="First Name"
@@ -43,7 +44,6 @@ export default function Signup() {
           required
           onChange={e => setUserSignup({ ...userSignup, name: e.target.value })}
         />
-        {/* TODO LAST NAME */}
         <TextField
           id="outlined-basic"
           label="Last Name"
@@ -55,7 +55,6 @@ export default function Signup() {
             setUserSignup({ ...userSignup, last_name: e.target.value })
           }
         />
-        {/* TODO EMAIL */}
         <TextField
           id="outlined-basic"
           label="Email "
@@ -67,7 +66,6 @@ export default function Signup() {
             setUserSignup({ ...userSignup, email: e.target.value })
           }
         />
-        {/* TODO PASSWORD */}
         <TextField
           id="outlined-basic"
           label="Password"
@@ -79,7 +77,6 @@ export default function Signup() {
             setUserSignup({ ...userSignup, password: e.target.value })
           }
         />
-        {/* TODO PROFILE_iMAGE */}
         <TextField
           id="outlined-basic"
           label="Profile Image"
