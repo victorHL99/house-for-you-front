@@ -25,6 +25,7 @@ export const Header = styled.header`
     font-size: 20px;
     letter-spacing: 0.05em;
     padding-left: 20px;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 
   nav {
@@ -34,7 +35,8 @@ export const Header = styled.header`
     gap: 10px;
     display: flex;
     align-items: center;
-    background-color: white;
+    color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.primary};
 
     img {
       height: 70%;
@@ -48,7 +50,7 @@ export const Header = styled.header`
 `;
 
 export const DropdownMenu = styled.div`
-  position: absolute;
+  position: fixed;
   top: ${({ theme }) => theme.spacing.headerHeight};
   height: 5%;
   right: 0;
@@ -60,9 +62,9 @@ export const DropdownMenu = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: white;
+  color: ${({ theme }) => theme.colors.secondary};
   font-size: 18px;
   font-weight: 700;
 
-  background-color: black;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;

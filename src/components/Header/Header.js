@@ -26,11 +26,7 @@ export default function Header() {
     };
 
     axios
-      .get(
-        // TODO transform this URL in a .env variable
-        `http://localhost:9000/user/`,
-        config,
-      )
+      .get(`${process.env.REACT_APP_API_KEY}user/`, config)
       .then(response => {
         console.log(response.data);
         // TODO transform for userState
