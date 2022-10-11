@@ -62,9 +62,7 @@ export default function Login() {
               setUserLogin({ ...userLogin, password: e.target.value })
             }
           />
-          <S.Button type="submit" variant="contained">
-            Login
-          </S.Button>
+          <S.Button type="submit">Login</S.Button>
         </S.SignForm>
 
         <Link to="/signup">

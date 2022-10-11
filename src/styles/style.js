@@ -5,6 +5,11 @@ export const MainPage = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   background-color: ${({ theme }) => theme.colors.primary};
