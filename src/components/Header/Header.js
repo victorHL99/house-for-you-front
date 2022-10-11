@@ -53,7 +53,7 @@ export default function Header() {
   return (
     <>
       <S.Header>
-        <h1>House For you</h1>
+        <h1>𝑯𝒐𝒖𝒔𝒆 𝑭𝒐𝒓 𝒀𝒐𝒖</h1>
         {showHeader && (
           <nav>
             <h2>Welcome, {localStorage.getItem('name')} </h2>

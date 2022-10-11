@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   height: ${({ theme }) => theme.spacing.headerHeight};
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.black};
 
   position: fixed;
   top: 0;
@@ -22,10 +22,19 @@ export const Header = styled.header`
 
   h1 {
     font-family: ${({ theme }) => theme.fonts.logoFont};
-    font-size: 20px;
+    font-size: 30px;
     letter-spacing: 0.05em;
     padding-left: 20px;
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.green};
+    transition: all 300ms;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      font-size: 25px;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 12px;
+    }
   }
 
   nav {
@@ -35,8 +44,9 @@ export const Header = styled.header`
     gap: 10px;
     display: flex;
     align-items: center;
-    color: ${({ theme }) => theme.colors.secondary};
-    background-color: ${({ theme }) => theme.colors.primary};
+    font-family: ${({ theme }) => theme.fonts.logoFont};
+    color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.black};
 
     img {
       height: 70%;
@@ -50,6 +60,7 @@ export const Header = styled.header`
 `;
 
 export const DropdownMenu = styled.div`
+  cursor: pointer;
   position: fixed;
   top: ${({ theme }) => theme.spacing.headerHeight};
   height: 5%;
@@ -62,9 +73,10 @@ export const DropdownMenu = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: ${({ theme }) => theme.colors.secondary};
+  font-family: ${({ theme }) => theme.fonts.logoFont};
+  color: ${({ theme }) => theme.colors.green};
   font-size: 18px;
   font-weight: 700;
 
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.black};
 `;
