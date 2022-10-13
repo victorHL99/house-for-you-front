@@ -140,3 +140,20 @@ export const RedirectText = styled.span`
     font-size: 14px;
   }
 `;
+
+export const LabelContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    gap: 10%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 5%;
+  }
+`;
