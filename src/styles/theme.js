@@ -18,6 +18,7 @@ const theme = {
     green: '#01FF82',
     greenLogin: '#00FF8052',
     cardLogin: '#2f2841',
+    gray: '#9e9e9e',
   },
   spacing: {
     maxBodyWidth: '1024px',

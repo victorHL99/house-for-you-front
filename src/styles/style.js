@@ -69,11 +69,11 @@ export const PageContainer = styled.main`
   position: absolute;
   height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
-  background-color: ${({ theme }) => theme.colors.tertiary};
+  background-color: ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
+  overflow-y: scroll;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     padding: 0 25px;
@@ -87,11 +87,11 @@ export const PageContainer = styled.main`
 export const PageLabel = styled.h1`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.secondary};
+  align-items: flex-start;
+  color: ${({ theme }) => theme.colors.green};
   font-size: 28px;
   font-weight: 700;
-  padding: 30px;
+  padding: 15px 0 15px 0;
   word-break: break-all;
   transition: all 300ms;
 

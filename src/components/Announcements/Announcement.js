@@ -66,7 +66,7 @@ export default function Announcement(props) {
           <BiBath size={25} />
           <p>{announcement.bathrooms} bathrooms</p>
         </div>
-        <button
+        <S.ButtonTell
           type="submit"
           onClick={() => {
             window.open(
@@ -76,7 +76,7 @@ export default function Announcement(props) {
           }}
         >
           Tell me
-        </button>
+        </S.ButtonTell>
       </S.ContainerIcons>
     </S.Announcement>
   );

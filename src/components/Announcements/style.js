@@ -4,14 +4,16 @@ export const Announcement = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  border-radius: ${({ theme }) => theme.borderRadius.main};
   gap: 15px;
   width: 100%;
   padding: 18px 15px;
   transition: all 300ms;
   margin-top: 10px;
-  font-family: ${({ theme }) => theme.fonts.annouceFont};
-  background-color: ${({ theme }) => theme.colors.quaternary};
-  color: ${({ theme }) => theme.colors.secondary};
+  font-family: ${({ theme }) => theme.fonts.layoutFont};
+  background-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.green};
+  box-shadow: 1px 1px 10px 1px ${({ theme }) => theme.colors.black};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 95%;
@@ -23,7 +25,7 @@ export const Announcement = styled.div`
     cursor: pointer;
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors.quinary};
+      box-shadow: 1px 1px 10px 1px ${({ theme }) => theme.colors.green};
     }
   }
 `;
@@ -43,19 +45,21 @@ export const ContainerIcons = styled.div`
     gap: 5px;
 
     p {
-      font-size: 14px;
+      font-size: 10px;
       font-weight: 700;
-    }
-  }
-  button {
-    height: 40px;
-    border-radius: 15px;
-    border: 1px solid ${({ theme }) => theme.colors.quaternary};
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.secondary};
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.primary};
-      color: ${({ theme }) => theme.colors.secondary};
+      letter-spacing: 1px;
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 12px;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+        font-size: 18px;
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.largeScreen}) {
+        font-size: 20px;
+      }
     }
   }
 `;
@@ -70,12 +74,12 @@ export const ImageHouse = styled.img`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 100%;
-    height: 300px;
+    height: 250px;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.largeScreen}) {
     width: 100%;
-    height: 400px;
+    height: 350px;
   }
 `;
 
@@ -88,11 +92,24 @@ export const ContainerImage = styled.div`
   border-radius: 15px;
 `;
 
-export const Teste = styled.div`
+export const ButtonTell = styled.button`
+  cursor: pointer;
   display: flex;
-  flex-direction: row;
+  padding: 5px;
   justify-content: center;
-  width: 300px;
-  height: 300px;
-  background-color: black;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.green};
+  border-radius: ${({ theme }) => theme.borderRadius.main};
+  border: none;
+  height: 50px;
+  font-family: ${({ theme }) => theme.fonts.layoutFont};
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: ${({ theme }) => theme.colors.primary};
+
+  &:hover {
+    box-shadow: 1px 1px 10px 1px ${({ theme }) => theme.colors.greenLogin};
+  }
 `;
