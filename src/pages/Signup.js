@@ -45,6 +45,7 @@ export default function Signup() {
             variant="outlined"
             type="text"
             name="name"
+            data-cy="name"
             color="success"
             required
             onChange={e =>
@@ -57,6 +58,7 @@ export default function Signup() {
             variant="outlined"
             type="text"
             name="last_name"
+            data-cy="last_name"
             color="success"
             required
             onChange={e =>
@@ -69,6 +71,7 @@ export default function Signup() {
             variant="outlined"
             type="text"
             name="email"
+            data-cy="email"
             color="success"
             required
             onChange={e =>
@@ -81,6 +84,7 @@ export default function Signup() {
             variant="outlined"
             type="password"
             name="password"
+            data-cy="password"
             color="success"
             required
             onChange={e =>
@@ -93,6 +97,7 @@ export default function Signup() {
             variant="outlined"
             type="url"
             name="profile_image"
+            data-cy="profile_image"
             color="success"
             required
             onChange={e =>
