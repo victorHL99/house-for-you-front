@@ -44,6 +44,7 @@ export default function Login() {
             variant="outlined"
             type="text"
             name="email"
+            data-cy="email"
             color="success"
             required
             onChange={e =>
@@ -56,6 +57,7 @@ export default function Login() {
             variant="outlined"
             type="password"
             name="password"
+            data-cy="password"
             color="success"
             required
             onChange={e =>
