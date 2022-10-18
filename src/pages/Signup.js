@@ -109,7 +109,9 @@ export default function Signup() {
             }
           />
 
-          <S.Button type="submit">{loadingSignup}</S.Button>
+          <S.Button type="submit" data-cy="signup_button">
+            {loadingSignup}
+          </S.Button>
         </S.SignForm>
 
         <Link to="/">
