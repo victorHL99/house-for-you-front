@@ -7,9 +7,11 @@ import axios from 'axios';
 import { AiOutlineHome } from 'react-icons/ai';
 import TextField from '@mui/material/TextField';
 import * as S from '../styles/style';
+import Loading from '../components/Loading/Loading';
 
 export default function Signup() {
   const navigate = useNavigate();
+  const [loadingSignup, setLoadingSignup] = useState('Sign up');
   const URL = `${process.env.REACT_APP_API_KEY}signup`;
   console.log(URL);
   const [userSignup, setUserSignup] = useState({
@@ -22,11 +24,13 @@ export default function Signup() {
 
   async function createUser(event) {
     event.preventDefault();
+    setLoadingSignup(Loading.Signup);
     try {
       await axios.post(URL, userSignup);
       navigate('/');
     } catch (error) {
       console.log(error);
+      setLoadingSignup('Sign up');
     }
   }
 
@@ -105,7 +109,7 @@ export default function Signup() {
             }
           />
 
-          <S.Button type="submit">Sign Up</S.Button>
+          <S.Button type="submit">{loadingSignup}</S.Button>
         </S.SignForm>
 
         <Link to="/">
