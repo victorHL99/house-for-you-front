@@ -10,8 +10,11 @@ import { AiOutlineHome } from 'react-icons/ai';
 import TextField from '@mui/material/TextField';
 import * as S from '../styles/style';
 
+import Loading from '../components/Loading/Loading';
+
 export default function Login() {
   const navigate = useNavigate();
+  const [loadingLogin, setLoadingLogin] = useState('Login');
   const URL = `${process.env.REACT_APP_API_KEY}login`;
   const [userLogin, setUserLogin] = useState({
     email: '',
@@ -20,13 +23,14 @@ export default function Login() {
 
   async function sendLogin(event) {
     event.preventDefault();
+    setLoadingLogin(Loading.Login);
     try {
       const login = await axios.post(URL, userLogin);
-      console.log();
       localStorage.setItem('token', login.data.token);
       navigate('/home');
     } catch (error) {
       console.log(error);
+      setLoadingLogin('Login');
     }
   }
 
@@ -64,7 +68,7 @@ export default function Login() {
               setUserLogin({ ...userLogin, password: e.target.value })
             }
           />
-          <S.Button type="submit">Login</S.Button>
+          <S.Button type="submit">{loadingLogin}</S.Button>
         </S.SignForm>
 
         <Link to="/signup">
