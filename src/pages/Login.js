@@ -68,7 +68,9 @@ export default function Login() {
               setUserLogin({ ...userLogin, password: e.target.value })
             }
           />
-          <S.Button type="submit">{loadingLogin}</S.Button>
+          <S.Button type="submit" data-cy="login_button">
+            {loadingLogin}
+          </S.Button>
         </S.SignForm>
 
         <Link to="/signup">
