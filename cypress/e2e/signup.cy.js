@@ -22,7 +22,7 @@ describe('Signup Suite Test', () => {
     cy.get('[data-cy=profile_image]').type(user.profile_image);
 
     cy.intercept('POST', '/signup').as('signup');
-    cy.contains('Sign Up').click();
+    cy.get('[data-cy=signup_button]').contains('Sign up').click();
     cy.wait('@signup').then(interception => {
       expect(interception.response.statusCode).to.equal(201);
     });
