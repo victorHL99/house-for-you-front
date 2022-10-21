@@ -3,7 +3,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -13,7 +13,7 @@ import Announcement from '../components/Announcements/Announcement';
 import * as S from '../styles/style';
 
 export default function Home() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const [permission, setPermission] = useState();
   const [announcements, setAnnouncements] = useState({});
@@ -72,7 +72,7 @@ export default function Home() {
             <AiOutlinePlus
               color="#01FF82"
               cursor="pointer"
-              onClick={navigate('/newAnnouncement')}
+              // onClick={() => navigate('/newAnnouncement')}
             />
           ) : null}
         </S.LabelContainer>
