@@ -11,6 +11,7 @@ import { IconContext } from 'react-icons';
 import Header from '../components/Header/Header';
 import Announcement from '../components/Announcements/Announcement';
 import * as S from '../styles/style';
+import CodeImage from '../assets/CodeImage';
 
 export default function Home() {
   // const navigate = useNavigate();
@@ -76,6 +77,7 @@ export default function Home() {
             />
           ) : null}
         </S.LabelContainer>
+        <CodeImage />
         <div>{showAnnouncements ? renderAnnouncements() : 'Carregando...'}</div>
       </S.PageContainer>
     </IconContext.Provider>
