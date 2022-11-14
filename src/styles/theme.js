@@ -6,6 +6,7 @@ const theme = {
     annouceFont:
       "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
     layoutFont: "'Roboto', sans-serif",
+    principalFont: "'Kurale', serif",
   },
   colors: {
     primary: '#180C24',
@@ -19,6 +20,7 @@ const theme = {
     greenLogin: '#00FF8052',
     cardLogin: '#2f2841',
     gray: '#9e9e9e',
+    purple2: '#542B7D',
   },
   spacing: {
     maxBodyWidth: '1024px',
@@ -33,6 +35,10 @@ const theme = {
   },
   borderRadius: {
     main: '16px',
+  },
+  padding: {
+    left: '9.3%',
+    rightHeader: '12%',
   },
 };
 

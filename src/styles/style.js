@@ -157,3 +157,11 @@ export const LabelContainer = styled.div`
     gap: 5%;
   }
 `;
+
+export const MainLadingPage = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
