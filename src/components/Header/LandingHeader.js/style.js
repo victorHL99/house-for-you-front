@@ -51,7 +51,7 @@ export const LoginButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.green};
+    border: 2px solid ${({ theme }) => theme.colors.green};
   }
 `;
 

@@ -10,14 +10,6 @@ export default function LandingHeader() {
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // function openModal() {
-  //   setModalIsOpen(true);
-  // }
-
-  // function closeModal() {
-  //   setModalIsOpen(false);
-  // }
-
   const toggleModal = () => {
     setModalIsOpen(prev => !prev);
   };
