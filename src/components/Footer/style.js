@@ -24,18 +24,21 @@ export const FooterIconsContainer = styled.div`
 `;
 
 export const LinkedinIcon = styled(AiFillLinkedin)`
+  cursor: pointer;
   width: 40px;
   height: 40px;
   color: ${({ theme }) => theme.colors.green};
 `;
 
 export const GithubIcon = styled(AiFillGithub)`
+  cursor: pointer;
   width: 40px;
   height: 40px;
   color: ${({ theme }) => theme.colors.green};
 `;
 
 export const EmailIcon = styled(MdEmail)`
+  cursor: pointer;
   width: 40px;
   height: 40px;
   color: ${({ theme }) => theme.colors.green};
