@@ -43,6 +43,7 @@ export const LoginButton = styled.button`
   width: auto;
   padding: 19px 23px 19px 23px;
 
+  border: none;
   border-radius: 40px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 
@@ -51,7 +52,7 @@ export const LoginButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    border: 2px solid ${({ theme }) => theme.colors.green};
+    opacity: 0.5;
   }
 `;
 
