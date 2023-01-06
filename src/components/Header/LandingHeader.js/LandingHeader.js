@@ -48,7 +48,9 @@ export default function LandingHeader() {
         <S.Logo src={Logo} />
       </S.BoxLabel>
       <S.BoxMenuOptions>
-        <S.MenuOptions>HOME</S.MenuOptions>
+        <S.MenuOptions onClick={() => window.location.reload()}>
+          HOME
+        </S.MenuOptions>
         <S.MenuOptions>ABOUT</S.MenuOptions>
         <S.MenuOptions>CONTACT</S.MenuOptions>
         <S.LoginButton onClick={toggleModal}>Join Us</S.LoginButton>
