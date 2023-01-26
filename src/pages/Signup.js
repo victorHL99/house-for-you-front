@@ -8,12 +8,12 @@ import { AiOutlineHome } from 'react-icons/ai';
 import TextField from '@mui/material/TextField';
 import * as S from '../styles/style';
 import Loading from '../components/Loading/Loading';
+import errorHandler from '../utils/errorHandler';
 
 export default function Signup() {
   const navigate = useNavigate();
   const [loadingSignup, setLoadingSignup] = useState('Sign up');
   const URL = `${process.env.REACT_APP_API_KEY}signup`;
-  console.log(URL);
   const [userSignup, setUserSignup] = useState({
     name: '',
     last_name: '',
@@ -29,7 +29,7 @@ export default function Signup() {
       await axios.post(URL, userSignup);
       navigate('/');
     } catch (error) {
-      console.log(error);
+      errorHandler(error);
       setLoadingSignup('Sign up');
     }
   }
