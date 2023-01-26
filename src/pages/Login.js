@@ -11,6 +11,7 @@ import TextField from '@mui/material/TextField';
 import * as S from '../styles/style';
 
 import Loading from '../components/Loading/Loading';
+import errorHandler from '../utils/errorHandler';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function Login() {
       localStorage.setItem('token', login.data.token);
       navigate('/home');
     } catch (error) {
-      console.log(error);
+      errorHandler(error);
       setLoadingLogin('Login');
     }
   }
