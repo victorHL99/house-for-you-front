@@ -3,9 +3,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { AiOutlineHome } from 'react-icons/ai';
 import TextField from '@mui/material/TextField';
+import { signUp } from '../services/authApi';
 import * as S from '../styles/style';
 import Loading from '../components/Loading/Loading';
 import errorHandler from '../utils/errorHandler';
@@ -13,7 +13,6 @@ import errorHandler from '../utils/errorHandler';
 export default function Signup() {
   const navigate = useNavigate();
   const [loadingSignup, setLoadingSignup] = useState('Sign up');
-  const URL = `${process.env.REACT_APP_API_KEY}signup`;
   const [userSignup, setUserSignup] = useState({
     name: '',
     last_name: '',
@@ -26,7 +25,7 @@ export default function Signup() {
     event.preventDefault();
     setLoadingSignup(Loading.Signup);
     try {
-      await axios.post(URL, userSignup);
+      await signUp(userSignup);
       navigate('/');
     } catch (error) {
       errorHandler(error);

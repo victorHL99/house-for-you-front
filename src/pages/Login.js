@@ -4,19 +4,16 @@
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { AiOutlineHome } from 'react-icons/ai';
-
 import TextField from '@mui/material/TextField';
+import { signIn } from '../services/authApi';
 import * as S from '../styles/style';
-
 import Loading from '../components/Loading/Loading';
 import errorHandler from '../utils/errorHandler';
 
 export default function Login() {
   const navigate = useNavigate();
   const [loadingLogin, setLoadingLogin] = useState('Login');
-  const URL = `${process.env.REACT_APP_API_KEY}login`;
   const [userLogin, setUserLogin] = useState({
     email: '',
     password: '',
@@ -26,7 +23,7 @@ export default function Login() {
     event.preventDefault();
     setLoadingLogin(Loading.Login);
     try {
-      const login = await axios.post(URL, userLogin);
+      const login = await signIn(userLogin.email, userLogin.password);
       localStorage.setItem('token', login.data.token);
       navigate('/home');
     } catch (error) {
